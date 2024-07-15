@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirect Example</title>
+</head>
+<body>
+    <script>
+        // The base URL to which you want to redirect
+        const baseURL = "https://pages.bluey.cam";
+
+        // Get the current path and query string
+        const currentPath = window.location.pathname;
+        const queryString = window.location.search;
+
+        // Construct the new URL
+        const newURL = `${baseURL}${currentPath}${queryString}`;
+
+        // Redirect to the new URL
+        window.location.href = newURL;
+    </script>
+</body>
+</html>
