@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link href="https://vjs.zencdn.net/7.15.4/video-js.css" rel="stylesheet">
-<script src="https://vjs.zencdn.net/7.15.4/video.js"></script>
-<head>
-<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Page Closed</title>
-<link rel="icon" href="/bluey-star.ico" type="image/x-icon">
-<link href="//pages.bluey.cam/fonts/HelloHeadline.css" rel="stylesheet" type="text/css">
+  <link href="https://vjs.zencdn.net/7.15.4/video-js.css" rel="stylesheet">
+  <script src="https://vjs.zencdn.net/7.15.4/video.js"></script>
+  <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Closed</title>
+  <link rel="icon" href="/bluey-star.ico" type="image/x-icon">
+  <link href="//pages.bluey.cam/fonts/HelloHeadline.css" rel="stylesheet" type="text/css">
   <style>
     * {
       box-sizing: border-box;
@@ -39,38 +38,6 @@
       border-radius: 0px;
     }
     
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 20px;
-    }
-
-    .header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .logo {
-      width: 150px;
-      border-radius: 0px;
-    }
-
-    .nav {
-      display: flex;
-      list-style: none;
-    }
-
-    .nav li {
-      margin-left: 20px;
-    }
-
-    .nav a {
-      text-decoration: none;
-      color: #ffffff;
-      font-weight: bold;
-    }
-
     p {
       margin-bottom: 30px;
       margin-top: 30px;
@@ -78,39 +45,29 @@
       color: white;
       text-align: center;
     }
-    
-    @media (max-width: 768px) {
-      .header {
-        flex-direction: column;
-      }
-
-      .nav {
-        margin-top: 20px;
-      }
-
-      .main {
-        flex-direction: column;
-      }
-
-      .main-left,
-      .main-right {
-        width: 100%;
-      }
-
-      .main-right {
-        margin-top: 20px;
-      }
-    }
   </style>
 </head>
 <body>
   <div class="container">
-    <div class="header">
-      <img src="https://www.themoviedb.org/t/p/original/uFYNVaPt6dz1PH6tZ4vfdyOnKS.png" alt="Bluey" class="logo">
-    </div>
     <div class="error">
-    <img src="https://i.ibb.co/LYGJfSH/MM-TV-Top-10-Bluey-Moments-That-Made-Us-Ugly-Cry-X6-J4-M5-f1-removebg-preview.png" alt="Logo">
-    <p>This website has been closed. Thank you for your visit.</p>
+      <img src="https://i.ibb.co/LYGJfSH/MM-TV-Top-10-Bluey-Moments-That-Made-Us-Ugly-Cry-X6-J4-M5-f1-removebg-preview.png" alt="Logo">
+      <p id="closedMessage"></p>
     </div>
+  </div>
+
+  <script>
+    // Timestamp in seconds
+    const timestamp = 1737352800;
+
+    // Convert timestamp to a date
+    const date = new Date(timestamp * 1000); // Multiply by 1000 to convert seconds to milliseconds
+
+    // Format the date (e.g., "January 20, 2025")
+    const options = { year: 'numeric', month: 'long', day: 'numeric' };
+    const formattedDate = date.toLocaleDateString(undefined, options);
+
+    // Display the message
+    document.getElementById('closedMessage').textContent = `This website has been closed since ${formattedDate}. Thank you for your visit.`;
+  </script>
 </body>
 </html>
